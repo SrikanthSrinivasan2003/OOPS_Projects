@@ -17,7 +17,7 @@ class Car:
 
     def accelerate(self):
         if not self.is_engine_started:
-            print("Car has not yet started")
+            print("Car has not started yet")
         else:
             self.current_speed+=self.acceleration
             if self.current_speed>self.max_speed:
@@ -32,7 +32,7 @@ class Car:
         if self.is_engine_started:
             print("Beep Beep")
         else:
-            print("Car has not yet started")
+            print("Car has not started yet")
 
 
 class RaceCar(Car):
@@ -41,7 +41,7 @@ class RaceCar(Car):
         self.nitro=nitro
         
     def accelerate(self):
-        if self.is_engine_started:
+        if self.nitro > 0  and self.is_engine_started:
             self.current_speed+=20
             self.nitro-=1 
         super().accelerate()
@@ -50,7 +50,7 @@ class RaceCar(Car):
         if self.is_engine_started:
             print("Peep Peep\nBeep Beep")
         else:
-            print("Car has not yet started")
+            print("Car has not started yet ")
 
 
 # You need not change any code below.
